@@ -8,17 +8,17 @@
 }
 
 @font-face {
-  font-family: "Passion One";
-  src: url("../public/fonts/Passion_One/PassionOne-Regular.ttf");
+  font-family: "Fira Sans Bold";
+  src: url("../public/fonts/Fira_Sans/FiraSans-Bold.ttf");
 }
 
 @layer base {
   * {
-    @apply m-0 p-0 font-fira;
+    @apply m-0 p-0;
   }
 
   html,
   body {
-    @apply bg-[#1c1c1e];
+    @apply bg-black;
   }
 }
