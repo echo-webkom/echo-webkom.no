@@ -16,7 +16,7 @@ const Gradient = ({ from, to, dir, className, children }: GradientProps) => {
 
   return (
     <span
-      className={`${className}`}
+      className={className}
       style={{
         background: `linear-gradient(${calculateDirection()}, ${from}, ${to})`,
         WebkitBackgroundClip: "text",

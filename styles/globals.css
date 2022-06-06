@@ -12,6 +12,11 @@
   src: url("../public/fonts/Fira_Sans/FiraSans-Bold.ttf");
 }
 
+@font-face {
+  font-family: "Open Sans";
+  src: url("../public/fonts/Open_Sans/static/OpenSans/OpenSans-Regular.ttf");
+}
+
 @layer base {
   * {
     @apply m-0 p-0;
@@ -19,6 +24,6 @@
 
   html,
   body {
-    @apply bg-black;
+    @apply bg-black text-white;
   }
 }

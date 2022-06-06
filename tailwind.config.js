@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     fontFamily: {
       "fira": ["Fira Sans"],
-      "fira-bold": ["Fira Sans Bold"]
+      "fira-bold": ["Fira Sans Bold"],
+      "open-sans": ["Open Sans"]
     },
     extend: {},
   },

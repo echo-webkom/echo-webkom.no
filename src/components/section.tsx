@@ -5,11 +5,7 @@ interface Props {
 }
 
 const Section = ({ children }: Props) => (
-  <div className="min-h-screen overflow-hidden w-full relative aboslute">
-    <div className="absolute top-1/3 -translate-y-1/2 left-1/2 -translate-x-1/2">
-      {children}
-    </div>
-  </div>
+  <div className="w-full m-auto px-5 md:px-10">{children}</div>
 );
 
 export default Section;
