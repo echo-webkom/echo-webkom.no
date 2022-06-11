@@ -6,9 +6,9 @@ interface Props {
 }
 
 const TechStackImg = ({ src, text }: Props) => (
-  <div className="flex flex-col h-24 w-28">
-    <div>
-      <Image src={src} alt={text + " logo"} />
+  <div className="flex flex-col">
+    <div className="h-20 w-20 rounded overflow-hidden">
+      <Image src={src} alt={text + " logo"} objectFit="fill" />
     </div>
     <p className="text-center text-gray-300 text-md">{text}</p>
   </div>

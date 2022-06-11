@@ -7,7 +7,7 @@ import { BsInstagram } from "react-icons/bs";
 import { IoMdPerson } from "react-icons/io";
 
 const Header = () => (
-  <div className="flex flex-row justify-between items-center w-full py-10 px-10 z-10">
+  <div className="flex flex-row justify-between items-center w-full py-10 px-5 md:px-10 z-10">
     <div>
       <div className="relative h-20 w-20">
         <Link href="https://echo.uib.no" passHref>

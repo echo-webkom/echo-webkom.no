@@ -12,7 +12,7 @@ const FormPage = () => {
             Send inn søknad
           </h1>
           <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{ email: "", name: "", program: "", message: "" }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
@@ -41,8 +41,11 @@ const FormPage = () => {
                 <Field
                   className="bg-black text-white p-2 border border-white rounded"
                   as="select"
-                  name="color"
+                  name="program"
                 >
+                  <option value="" disabled selected>
+                    -- Velg her --
+                  </option>
                   <option value="datateknologi">Datateknologi</option>
                   <option value="datasikkerhet">Datasikkerhet</option>
                   <option value="datavitenskap">
