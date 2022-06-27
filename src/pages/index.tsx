@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         <motion.div
           initial={{ opacity: 0, x: -300 }}
           whileInView={{ opacity: 100, x: 0 }}
-          className="m-auto pt-20"
+          className="m-auto pt-10"
         >
           <div className="font-fira-bold text-white text-center flex flex-col text-7xl sm:text-9xl">
             <p>echo </p>

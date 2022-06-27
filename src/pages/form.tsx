@@ -12,7 +12,25 @@ const FormPage = () => {
             Send inn søknad
           </h1>
           <Formik
-            initialValues={{ email: "", name: "", program: "", message: "" }}
+            initialValues={{
+              email: "",
+              name: "",
+              year: "",
+              program: "",
+              message: "",
+              date: new Date(),
+            }}
+            validate={(values) => {
+              let errors: Map<string, string> = {};
+              if (!values.email) {
+                errors["email"] = "Required";
+              } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+              ) {
+                errors.email = "Invalid email address";
+              }
+              return errors;
+            }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
@@ -36,6 +54,23 @@ const FormPage = () => {
                   type="name"
                   name="name"
                 />
+
+                <label className="text-lg font-fira-bold">Årstrinn</label>
+                <Field
+                  className="bg-black text-white p-2 border border-white rounded"
+                  as="select"
+                  name="year"
+                >
+                  <option value="" disabled selected>
+                    -- Velg her --
+                  </option>
+                  <option value="1">1. året</option>
+                  <option value="2">2. året</option>
+                  <option value="3">3. året</option>
+                  <option value="4">4. året</option>
+                  <option value="5">5. året</option>
+                  <option value="other">Annet</option>
+                </Field>
 
                 <label className="text-lg font-fira-bold">Studieretning</label>
                 <Field
@@ -66,13 +101,14 @@ const FormPage = () => {
                   Hvorfor ønsker du å bli med?
                 </label>
                 <Field
-                  className="text-white bg-black border border-white p-2"
+                  className="text-white bg-black border border-white p-2 rounded"
                   as="textarea"
+                  rows="5"
                   name="message"
                 />
 
                 <button
-                  className="w-fit font-fira text-black bg-white rounded px-3 py-2 m-auto"
+                  className="w-fit font-fira mb-10 text-black bg-white border border-white rounded px-3 py-2 m-auto transition-all hover:bg-black hover:text-white"
                   type="submit"
                   disabled={isSubmitting}
                 >
