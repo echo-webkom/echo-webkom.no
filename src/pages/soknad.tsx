@@ -57,7 +57,7 @@ const FormPage = () => {
               <ErrorMessage
                 errors={errors}
                 name="email"
-                as={<p className="text-red-600" />}
+                as={<p className="text-red-600 italic" />}
               />
             </FormSection>
 
@@ -74,7 +74,7 @@ const FormPage = () => {
               <ErrorMessage
                 errors={errors}
                 name="name"
-                as={<p className="text-red-600" />}
+                as={<p className="text-red-600 italic" />}
               />
             </FormSection>
 
@@ -100,7 +100,7 @@ const FormPage = () => {
               <ErrorMessage
                 errors={errors}
                 name="grade"
-                as={<p className="text-red-600" />}
+                as={<p className="text-red-600 italic" />}
               />
             </FormSection>
 
@@ -134,7 +134,7 @@ const FormPage = () => {
               <ErrorMessage
                 errors={errors}
                 name="program"
-                as={<p className="text-red-600" />}
+                as={<p className="text-red-600 italic" />}
               />
             </FormSection>
 
@@ -151,7 +151,7 @@ const FormPage = () => {
               <ErrorMessage
                 errors={errors}
                 name="message"
-                as={<p className="text-red-600" />}
+                as={<p className="text-red-600 italic" />}
               />
             </FormSection>
 
