@@ -5,7 +5,6 @@ import FormSection from "../components/form/form-sectiom";
 import FormLabel from "../components/form/form-label";
 import { useEffect } from "react";
 import { ErrorMessage } from "@hookform/error-message";
-import FormError from "../components/form/form-error";
 
 type FormValues = {
   email: string;

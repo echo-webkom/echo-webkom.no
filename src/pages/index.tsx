@@ -37,6 +37,47 @@ const Home: NextPage = () => {
           </div>
         </motion.div>
       </Section>
+      <Section>
+        <div className="p-10 max-w-8xl m-auto">
+          <div className="text-6xl sm:text-8xl font-bold mb-8">
+            <Gradient from="#5ac1e9" to="#257bb2" dir="left-to-right">
+              Hvem er vi?
+            </Gradient>
+          </div>
+          <div className="max-w-xl flex flex-col gap-8 text-xl">
+            <p>
+              Webkom er en undergruppe som drifter og videreutvikler echo sine
+              webløsninger, blant annet denne nettsiden.
+            </p>
+            <p>
+              Ved hjelp av prosjektarbeid og en arbeidsmåte som gjenspeiler
+              arbeidslivet, gir vi våre medlemmer en smakebit på hvordan det er
+              å være utvikler.
+            </p>
+            <p>
+              Noe av det du kan være med å utvikle som medlem i Webkom, er blant
+              annet publiseringssytemet til nettsiden, påmeldingsløsninger til
+              bedriftspresentasjoner og arrangementer, eller design av ulike
+              interne webapplikasjoner.
+            </p>
+          </div>
+        </div>
+      </Section>
+      <Section>
+        <div className="p-10 max-w-8xl m-auto float-right text-right">
+          <div className="text-6xl sm:text-8xl font-bold mb-8">
+            <Gradient from="#f26d70" to="#f13d3f" dir="left-to-right">
+              Teknologier
+            </Gradient>
+          </div>
+          <p className="max-w-xl text-xl">
+            I webkom prøver vi så godt som mulig å reflektere hvordan
+            arbeidslivet ditt kan en dag bli. Dette gjør vi ved å blant annet
+            bruke teknologier som er relavante. Dette gjør at du får en forsmak
+            på hva du en dag kommer til å jobbe med.
+          </p>
+        </div>
+      </Section>
     </>
   );
 };

@@ -1,11 +1,10 @@
-import { Parallax } from "react-scroll-parallax";
-
 interface Props {
   children: React.ReactNode;
+  className?: string;
 }
 
-const Section = ({ children }: Props) => (
-  <div className="w-full m-auto px-5 md:px-10">{children}</div>
+const Section = ({ children, className }: Props) => (
+  <div className={`h-screen m-auto px-5 md:px-10 ${className ?? ""}`}>{children}</div>
 );
 
 export default Section;
