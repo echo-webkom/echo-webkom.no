@@ -12,9 +12,9 @@ const Home: NextPage = () => {
       <Section>
         <motion.div
           initial={{ opacity: 0, x: -300 }}
-          whileInView={{ opacity: 100, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
         >
-          <div className="text-7xl sm:text-9xl flex flex-col font-bold text-center">
+          <div className="text-7xl sm:text-9xl my-10 flex flex-col font-bold text-center">
             <p>echo</p>
             <p>
               <Gradient from="#a6cfd9" to="#fed879" dir="left-to-right">
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         </motion.div>
       </Section>
       <Section>
-        <div className="p-10 max-w-8xl m-auto">
+        <div className="p-5 max-w-4xl m-auto">
           <div className="text-6xl sm:text-8xl font-bold mb-8">
             <Gradient from="#5ac1e9" to="#257bb2" dir="left-to-right">
               Hvem er vi?
@@ -64,18 +64,20 @@ const Home: NextPage = () => {
         </div>
       </Section>
       <Section>
-        <div className="p-10 max-w-8xl m-auto float-right text-right">
-          <div className="text-6xl sm:text-8xl font-bold mb-8">
-            <Gradient from="#f26d70" to="#f13d3f" dir="left-to-right">
-              Teknologier
-            </Gradient>
+        <div className="p-5 max-w-4xl m-auto">
+          <div className="float-right text-right">
+            <div className="text-6xl sm:text-8xl font-bold mb-8">
+              <Gradient from="#f26d70" to="#f13d3f" dir="left-to-right">
+                Teknologier
+              </Gradient>
+            </div>
+            <p className="max-w-xl text-xl">
+              I webkom prøver vi så godt som mulig å reflektere hvordan
+              arbeidslivet ditt kan en dag bli. Dette gjør vi ved å blant annet
+              bruke teknologier som er relavante. Dette gjør at du får en
+              forsmak på hva du en dag kommer til å jobbe med.
+            </p>
           </div>
-          <p className="max-w-xl text-xl">
-            I webkom prøver vi så godt som mulig å reflektere hvordan
-            arbeidslivet ditt kan en dag bli. Dette gjør vi ved å blant annet
-            bruke teknologier som er relavante. Dette gjør at du får en forsmak
-            på hva du en dag kommer til å jobbe med.
-          </p>
         </div>
       </Section>
     </>

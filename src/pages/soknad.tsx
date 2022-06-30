@@ -1,7 +1,8 @@
 import Header from "../components/header/header";
 import Section from "../components/section";
+import { Toaster, toast } from "react-hot-toast";
 import { SubmitHandler, useForm } from "react-hook-form";
-import FormSection from "../components/form/form-sectiom";
+import FormSection from "../components/form/form-section";
 import FormLabel from "../components/form/form-label";
 import { useEffect } from "react";
 import { ErrorMessage } from "@hookform/error-message";
@@ -23,7 +24,13 @@ const FormPage = () => {
     formState: { errors, isSubmitSuccessful },
   } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    alert(JSON.stringify(data));
+    toast.success("Søknaden er sendt!");
+
+    // bizniz logic if failure
+    // toast.error("Søknaden ble ikke sendt!");
+  };
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -33,6 +40,16 @@ const FormPage = () => {
 
   return (
     <>
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "black",
+            border: "1px solid white",
+            color: "white",
+          },
+        }}
+      />
+
       <Header />
       <Section>
         <div className="max-w-9xl my-5">
