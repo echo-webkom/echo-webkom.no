@@ -1,46 +1,34 @@
 import axios from "axios";
+import { Degree } from "../types";
 
-interface FormValues {
+type FormValues = {
   email: string;
   name: string;
+  grade: number;
+  program: Degree;
   message: string;
-}
-
-interface FeedbackResponse {
-  isSuccess: boolean;
-  title: string;
-  description: string;
-}
-
-const successResponse: FeedbackResponse = {
-  isSuccess: true,
-  title: "Din søknad er sendt",
-  description:
-    "Tusen takk for din søknad. Vi vil ta kontakt med deg når søknadsprossesen er over.",
-};
-
-const errorResponse: FeedbackResponse = {
-  isSuccess: false,
-  title: "Noe gikk galt",
-  description: "Vi kunne ikke sende søknaden din. Prøv igjen senere.",
 };
 
 const BACKEND_URL = process.env.BACKEND_URL ?? "http://localhost:8080";
 
 const ApplicationAPI = {
-  sendApplication: async (values: FormValues): Promise<FeedbackResponse> => {
+  sendApplication: async (values: FormValues): Promise<number> => {
     try {
-      await axios.post(`${BACKEND_URL}/webkom-application`, values, {
-        headers: { "Content-Type": "application/json" },
-        validateStatus: (statusCode: number) => statusCode == 200,
-      });
+      const resp = await axios.post(
+        `${BACKEND_URL}/webkom-application`,
+        values,
+        {
+          headers: { "Content-Type": "application/json" },
+          validateStatus: (statusCode: number) => statusCode == 200,
+        }
+      );
 
-      return successResponse;
+      return resp.status;
     } catch {
-      return errorResponse;
+      return 500;
     }
   },
 };
 
 export { ApplicationAPI };
-export type { FormValues, FeedbackResponse };
+export type { FormValues };

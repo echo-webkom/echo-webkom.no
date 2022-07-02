@@ -6,14 +6,8 @@ import FormSection from "../components/form/form-section";
 import FormLabel from "../components/form/form-label";
 import { useEffect } from "react";
 import { ErrorMessage } from "@hookform/error-message";
-
-type FormValues = {
-  email: string;
-  name: string;
-  grade: string;
-  program: string;
-  message: string;
-};
+import { FormValues } from "../lib/api/application";
+import { Degree } from "../lib/types";
 
 const FormPage = () => {
   const {
@@ -34,7 +28,7 @@ const FormPage = () => {
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset({ name: "", email: "", grade: "", program: "", message: "" });
+      reset({ name: "", email: "", grade: 0, program: undefined, message: "" });
     }
   }, [formState, isSubmitSuccessful, reset]);
 
@@ -106,12 +100,12 @@ const FormPage = () => {
                 <option value="" disabled selected>
                   -- Velg her --
                 </option>
-                <option value="1">1. året</option>
-                <option value="2">2. året</option>
-                <option value="3">3. året</option>
-                <option value="4">4. året</option>
-                <option value="5">5. året</option>
-                <option value="other">Annet</option>
+                <option value={1}>1. året</option>
+                <option value={2}>2. året</option>
+                <option value={3}>3. året</option>
+                <option value={4}>4. året</option>
+                <option value={5}>5. året</option>
+                <option value={0}>Annet</option>
               </select>
               <ErrorMessage
                 errors={errors}
@@ -129,23 +123,23 @@ const FormPage = () => {
                 className="bg-black text-white p-2 border border-white rounded"
                 name="program"
               >
-                <option value="" disabled selected>
+                <option value={undefined} disabled selected>
                   -- Velg her --
                 </option>
-                <option value="datateknologi">Datateknologi</option>
-                <option value="datasikkerhet">Datasikkerhet</option>
-                <option value="datavitenskap">
-                  Data Science/Datavitenskap
+                <option value={Degree.DTEK}>Datateknologi</option>
+                <option value={Degree.DSIK}>Datasikkerhet</option>
+                <option value={Degree.DVIT}>Data Science/Datavitenskap</option>
+                <option value={Degree.BINF}>Bioinformatikk</option>
+                <option value={Degree.IMO}>
+                  Informatikk-matematikk-økonomi
                 </option>
-                <option value="bioinformatikk">Bioinformatikk</option>
-                <option value="imø">Informatikk-matematikk-økonomi</option>
-                <option value="master i inf">Master i informatikk</option>
-                <option value="programvareutvikling">
+                <option value={Degree.INF}>Master i informatikk</option>
+                <option value={Degree.PROG}>
                   Felles master i programvareutvikling
                 </option>
-                <option value="års i inf">Årsstudium i informatikk</option>
-                <option value="postbach">Postbachelor</option>
-                <option value="annet">Annet studieløp</option>
+                <option value={Degree.ARMNINF}>Årsstudium i informatikk</option>
+                <option value={Degree.POST}>Postbachelor</option>
+                <option value={Degree.MISC}>Annet studieløp</option>
               </select>
               <ErrorMessage
                 errors={errors}
