@@ -52,7 +52,7 @@ const FormPage = () => {
           </h1>
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col max-w-xl m-auto gap-5"
+            className="flex flex-col max-w-xl m-auto gap-5 px-5"
           >
             <FormSection>
               <FormLabel isRequired>E-post</FormLabel>
@@ -97,9 +97,6 @@ const FormPage = () => {
                 className="bg-black text-white p-2 border border-white rounded"
                 name="grade"
               >
-                <option value="" disabled selected>
-                  -- Velg her --
-                </option>
                 <option value={1}>1. året</option>
                 <option value={2}>2. året</option>
                 <option value={3}>3. året</option>
@@ -123,9 +120,6 @@ const FormPage = () => {
                 className="bg-black text-white p-2 border border-white rounded"
                 name="program"
               >
-                <option value={undefined} disabled selected>
-                  -- Velg her --
-                </option>
                 <option value={Degree.DTEK}>Datateknologi</option>
                 <option value={Degree.DSIK}>Datasikkerhet</option>
                 <option value={Degree.DVIT}>Data Science/Datavitenskap</option>
