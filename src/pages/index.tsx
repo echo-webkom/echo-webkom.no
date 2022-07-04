@@ -4,6 +4,13 @@ import Header from "../components/header/header";
 import { motion } from "framer-motion";
 import Gradient from "../components/gradient";
 import Link from "next/link";
+import { Parallax } from "react-scroll-parallax";
+import Image from "next/image";
+
+import Postgres from "../../public/images/postgresql-logo.png";
+import NextJS from "../../public/images/nextjs-logo.png";
+import Kotlin from "../../public/images/kotlin-logo.png";
+import Typescript from "../../public/images/typescript-logo.png";
 
 const Home: NextPage = () => {
   return (
@@ -23,7 +30,7 @@ const Home: NextPage = () => {
             </p>
           </div>
           <div className="my-10">
-            <p className="text-center text-xl text-[#ccc] font-thin">
+            <p className="text-center text-xl text-[#ccc]">
               Bli med på å drifte og utvikle echo sine webløsninger, og få en
               smakebit på arbeidslivet.
             </p>
@@ -64,7 +71,7 @@ const Home: NextPage = () => {
         </div>
       </Section>
       <Section>
-        <div className="p-5 max-w-4xl m-auto">
+        <div className="p-5 max-w-4xl m-auto z-50">
           <div className="float-right text-right">
             <div className="text-6xl sm:text-8xl font-bold mb-8">
               <Gradient from="#f26d70" to="#f13d3f" dir="left-to-right">
@@ -79,6 +86,38 @@ const Home: NextPage = () => {
             </p>
           </div>
         </div>
+
+        <Parallax speed={10}>
+          <div className="absolute -z-10 left-10 top-10">
+            <div className="w-20 h-20 overflow-hidden">
+              <Image src={Postgres} alt="PostgreSQL" />
+            </div>
+          </div>
+        </Parallax>
+
+        <Parallax speed={-10}>
+          <div className="absolute -z-10 left-1/3 top-1/2">
+            <div className="w-20 h-20 overflow-hidden">
+              <Image src={NextJS} alt="PostgreSQL" />
+            </div>
+          </div>
+        </Parallax>
+
+        <Parallax speed={30}>
+          <div className="absolute -z-10 right-1/3 top-1/4">
+            <div className="w-20 h-20 overflow-hidden">
+              <Image src={Kotlin} alt="PostgreSQL" />
+            </div>
+          </div>
+        </Parallax>
+
+        <Parallax speed={25}>
+          <div className="absolute -z-10 left-2/3 top-3/4">
+            <div className="w-20 h-20 overflow-hidden">
+              <Image src={Typescript} alt="PostgreSQL" />
+            </div>
+          </div>
+        </Parallax>
       </Section>
     </>
   );

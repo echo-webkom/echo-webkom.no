@@ -5,11 +5,11 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      "fira": ["Fira Sans"],
-      "fira-bold": ["Fira Sans Bold"],
-      "open-sans": ["Open Sans"]
+      monospace: ["IBM Plex"],
+      italic: ["IBM Plex Italic"],
+      sans: ["IBM Plex Sans"],
     },
     extend: {},
   },
   plugins: [],
-}
+};

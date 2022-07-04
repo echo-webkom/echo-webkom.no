@@ -6,7 +6,7 @@ interface Props {
 const FormLabel = ({ children, isRequired }: Props) => (
   <label className="text-lg font-fira-bold" aria-required={isRequired}>
     {children}
-    {isRequired && <span className="ml-1 text-red-600">*</span>}
+    {isRequired && <span className="ml-1 text-[#F6404F]">*</span>}
   </label>
 );
 
