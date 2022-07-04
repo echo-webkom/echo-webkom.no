@@ -1,27 +1,16 @@
 import type { NextPage } from "next";
 import Section from "../components/section";
 import Header from "../components/header/header";
-import { motion } from "framer-motion";
 import Gradient from "../components/gradient";
 import Link from "next/link";
-import { Parallax } from "react-scroll-parallax";
-import Image from "next/image";
-
-import Postgres from "../../public/images/postgresql-logo.png";
-import NextJS from "../../public/images/nextjs-logo.png";
-import Kotlin from "../../public/images/kotlin-logo.png";
-import Typescript from "../../public/images/typescript-logo.png";
 
 const Home: NextPage = () => {
   return (
     <>
       <Header />
       <Section>
-        <motion.div
-          initial={{ opacity: 0, x: -300 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          <div className="text-7xl sm:text-9xl my-10 flex flex-col font-bold text-center">
+        <div className="max-w-7xl m-auto px-5">
+          <div className="text-7xl sm:text-9xl my-10 flex flex-col font-monospace font-extrabold">
             <p>echo</p>
             <p>
               <Gradient from="#a6cfd9" to="#fed879" dir="left-to-right">
@@ -29,20 +18,20 @@ const Home: NextPage = () => {
               </Gradient>
             </p>
           </div>
-          <div className="my-10">
-            <p className="text-center text-xl text-[#ccc]">
+          <div className="max-w-lg mb-10">
+            <p className="text-3xl text-white">
               Bli med på å drifte og utvikle echo sine webløsninger, og få en
               smakebit på arbeidslivet.
             </p>
           </div>
-          <div className="my-5 mx-auto w-fit">
+          <div className="w-fit">
             <Link href="/soknad" passHref>
-              <a className="bg-white text-black rounded px-5 py-2 font-fira transition-all border border-transparent hover:bg-transparent hover:text-white hover:border-white">
+              <a className="bg-white text-black rounded px-5 py-2 text-xl font-monospace transition-all border border-transparent hover:bg-transparent hover:text-white hover:border-white">
                 <span>Søk idag</span>
               </a>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </Section>
       <Section>
         <div className="p-5 max-w-4xl m-auto">
@@ -86,38 +75,6 @@ const Home: NextPage = () => {
             </p>
           </div>
         </div>
-
-        <Parallax speed={10}>
-          <div className="absolute -z-10 left-10 top-10">
-            <div className="w-20 h-20 overflow-hidden">
-              <Image src={Postgres} alt="PostgreSQL" />
-            </div>
-          </div>
-        </Parallax>
-
-        <Parallax speed={-10}>
-          <div className="absolute -z-10 left-1/3 top-1/2">
-            <div className="w-20 h-20 overflow-hidden">
-              <Image src={NextJS} alt="PostgreSQL" />
-            </div>
-          </div>
-        </Parallax>
-
-        <Parallax speed={30}>
-          <div className="absolute -z-10 right-1/3 top-1/4">
-            <div className="w-20 h-20 overflow-hidden">
-              <Image src={Kotlin} alt="PostgreSQL" />
-            </div>
-          </div>
-        </Parallax>
-
-        <Parallax speed={25}>
-          <div className="absolute -z-10 left-2/3 top-3/4">
-            <div className="w-20 h-20 overflow-hidden">
-              <Image src={Typescript} alt="PostgreSQL" />
-            </div>
-          </div>
-        </Parallax>
       </Section>
     </>
   );
