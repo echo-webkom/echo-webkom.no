@@ -27,7 +27,13 @@ const FormPage = () => {
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      reset({ name: "", email: "", grade: 0, program: undefined, message: "" });
+      reset({
+        name: "",
+        email: "",
+        degree_year: 0,
+        degree: undefined,
+        message: "",
+      });
     }
   }, [formState, isSubmitSuccessful, reset]);
 
@@ -95,11 +101,11 @@ const FormPage = () => {
           <FormSection>
             <FormLabel isRequired>Årstrinn</FormLabel>
             <select
-              {...register("grade", {
+              {...register("degree_year", {
                 required: "Du må legge til hvilket trinn du går i!",
               })}
               className="bg-black text-white p-2 border border-white rounded"
-              name="grade"
+              name="degree_year"
             >
               <option value={1}>1. året</option>
               <option value={2}>2. året</option>
@@ -110,7 +116,7 @@ const FormPage = () => {
             </select>
             <ErrorMessage
               errors={errors}
-              name="grade"
+              name="degree_year"
               as={<p className="text-[#F6404F] italic" />}
             />
           </FormSection>
@@ -118,11 +124,11 @@ const FormPage = () => {
           <FormSection>
             <FormLabel isRequired>Studieretning</FormLabel>
             <select
-              {...register("program", {
+              {...register("degree", {
                 required: "Du må legge til din studieretning!",
               })}
               className="bg-black text-white p-2 border border-white rounded"
-              name="program"
+              name="degree"
             >
               <option value={Degree.DTEK}>Datateknologi</option>
               <option value={Degree.DSIK}>Datasikkerhet</option>
@@ -139,7 +145,7 @@ const FormPage = () => {
             </select>
             <ErrorMessage
               errors={errors}
-              name="program"
+              name="degree"
               as={<p className="text-[#F6404F] italic" />}
             />
           </FormSection>

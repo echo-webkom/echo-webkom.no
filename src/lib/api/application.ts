@@ -4,8 +4,8 @@ import { Degree } from "../types";
 type FormValues = {
   email: string;
   name: string;
-  grade: number;
-  program: Degree;
+  degree_year: number;
+  degree: Degree;
   message: string;
 };
 
