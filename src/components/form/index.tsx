@@ -1,11 +1,10 @@
-import Header from "../header/header";
 import { Toaster, toast } from "react-hot-toast";
 import { SubmitHandler, useForm } from "react-hook-form";
 import FormSection from "./form-section";
 import FormLabel from "./form-label";
 import { useEffect } from "react";
 import { ErrorMessage } from "@hookform/error-message";
-import { ApplicationAPI, FormValues } from "../../lib/api/application";
+import { FormValues } from "../../lib/api/application";
 import { Degree } from "../../lib/types";
 
 const Form = () => {

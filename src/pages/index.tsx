@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <>
       <Header />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 px-5 md:px-10 mt-5 gap-10 lg:gap-3 mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 px-2 sm:px-5 md:px-10 mt-5 gap-10 lg:gap-3 mb-10">
         {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -300 }}
