@@ -10,8 +10,7 @@ const Home: NextPage = () => {
     <>
       <Header />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 px-2 sm:px-5 md:px-10 mt-5 gap-10 lg:gap-3 mb-10">
-        {/* LEFT SIDE */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 px-5 md:px-15 mt-5 gap-32 lg:gap-3 mb-10">
         <motion.div
           initial={{ opacity: 0, x: -300 }}
           animate={{ opacity: 1, x: 0 }}
@@ -38,7 +37,9 @@ const Home: NextPage = () => {
           className="m-auto w-full"
         >
           <div className="bg-white p-5 rounded-md">
-            <h2 className="text-3xl font-display text-black">Send søknad</h2>
+            <h2 className="text-3xl font-display text-black mb-3">
+              Send søknad
+            </h2>
 
             <Form />
           </div>
