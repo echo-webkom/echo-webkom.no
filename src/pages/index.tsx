@@ -1,13 +1,16 @@
 import type { NextPage } from "next";
 
-import Header from "../components/header/header";
+import Header from "../components/header";
 import { motion } from "framer-motion";
 import Form from "../components/form";
 import Footer from "../components/footer";
+import SEO from "../components/seo";
 
 const Home: NextPage = () => {
   return (
     <>
+      <SEO />
+
       <Header />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 px-5 md:px-15 mt-5 gap-32 lg:gap-3 mb-10">
