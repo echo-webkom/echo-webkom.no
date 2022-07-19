@@ -4,7 +4,7 @@ import FormSection from "./form-section";
 import FormLabel from "./form-label";
 import { useEffect } from "react";
 import { ErrorMessage } from "@hookform/error-message";
-import { FormValues } from "../../lib/api/application";
+import { ApplicationAPI, FormValues } from "../../lib/api/application";
 import { Degree } from "../../lib/types";
 
 const Form = () => {
@@ -17,20 +17,14 @@ const Form = () => {
   } = useForm<FormValues>();
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    alert(JSON.stringify(data, null, 2));
-    // const status = await ApplicationAPI.sendApplication({
-    //   email: data.email,
-    //   name: data.name,
-    //   degree_year: data.degree_year,
-    //   degree: data.degree,
-    //   message: data.message,
-    // });
+    // alert(JSON.stringify(data, null, 2));
+    const status = await ApplicationAPI.sendApplication(data);
 
-    // if (status == 200) {
-    //   toast.success("Søknaden er sendt!");
-    // } else {
-    //   toast.error("Noe gikk galt!");
-    // }
+    if (status == 200) {
+      toast.success("Søknaden er sendt!");
+    } else {
+      toast.error("Noe gikk galt!");
+    }
   };
 
   useEffect(() => {

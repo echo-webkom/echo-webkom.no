@@ -11,14 +11,20 @@ interface FormValues {
 
 const BACKEND_URL = process.env.BACKEND_URL ?? "http://localhost:8080";
 
+// TODO: Add token to request header
+// const FORM_TOKEN = process.env.FORM_TOKEN ?? "";
+
 const ApplicationAPI = {
   sendApplication: async (values: FormValues): Promise<number> => {
     try {
       const resp = await axios.post(
-        `${BACKEND_URL}/application/webkom`,
+        `${BACKEND_URL}/webkom-application`,
         values,
         {
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            // Authorization: "Bearer " + FORM_TOKEN,
+          },
         }
       );
 
