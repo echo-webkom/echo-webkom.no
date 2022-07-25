@@ -13,7 +13,7 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 px-5 md:px-15 mt-5 gap-32 lg:gap-3 mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 px-5 md:px-15 gap-32 lg:gap-5 mb-10">
         <motion.div
           initial={{ opacity: 0, x: -300 }}
           animate={{ opacity: 1, x: 0 }}
@@ -29,7 +29,8 @@ const Home: NextPage = () => {
               smakebit på arbeidslivet.
             </p>
             <p>
-              Webkom søker engasjerte studenter til som ønsker å jobbe med web.
+              Vi i Webkom søker nye engasjerte studenter som har til å hjelpe
+              med å utvikle og drifte echo sine løsninger på nettet.
             </p>
           </div>
         </motion.div>
@@ -37,13 +38,12 @@ const Home: NextPage = () => {
         <motion.div
           initial={{ opacity: 0, y: 300 }}
           animate={{ opacity: 1, y: 0 }}
-          className="m-auto w-full"
+          className="flex flex-col"
         >
           <div className="bg-white p-5 rounded-md">
             <h2 className="text-3xl font-display text-black mb-3">
               Send søknad
             </h2>
-
             <Form />
           </div>
         </motion.div>
