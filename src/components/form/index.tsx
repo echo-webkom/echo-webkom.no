@@ -157,7 +157,7 @@ const Form = () => {
 
         <button
           className={
-            "bg-blue-500 hover:bg-blue-400 w-full md:w-fit rounded px-3 py-2 m-auto font-bold"
+            "bg-blue-500 hover:bg-blue-400 w-full md:w-fit rounded px-6 py-3 m-auto font-bold"
           }
           type="submit"
         >
