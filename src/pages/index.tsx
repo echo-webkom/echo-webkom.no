@@ -15,7 +15,11 @@ const Home: NextPage = () => {
       <div className="flex flex-col min-h-screen">
         <Header />
 
-        <div className="m-auto grid grid-cols-1 lg:grid-cols-2 px-5 md:px-15 gap-32 lg:gap-5 mb-10">
+        <div
+          className={
+            "m-auto max-w-[1500px] grid grid-cols-1 lg:grid-cols-2 px-5 md:px-15 gap-32 lg:gap-5 mb-10"
+          }
+        >
           <motion.div
             initial={{ opacity: 0, x: -300 }}
             animate={{ opacity: 1, x: 0 }}
