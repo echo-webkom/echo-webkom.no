@@ -5,9 +5,11 @@
 :root {
   --color-background: #0a0a0a;
   --color-text: #f7f7f7;
+  --color-dot: #f7f7f733;
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background: var(--color-background);
+  background-image: radial-gradient(var(--color-dot) 1px, transparent 0);
+  background-size: 40px 40px;
 }

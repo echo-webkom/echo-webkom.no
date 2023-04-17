@@ -44,10 +44,12 @@ export default function Home() {
           {LINKS.map(({ to, title, desc }) => (
             <a href={to} key={`${title}${to}`}>
               <section className="relative group">
-                <div className="absolute blur group-hover:blur-lg transition-all duration-500 inset-0 bg-gradient-to-tr from-indigo-900 to-purple-900 rounded-lg" />
+                <div className="absolute blur-sm group-hover:blur transition-all duration-500 inset-0 bg-gradient-to-tr from-indigo-900 to-purple-900 rounded-lg" />
 
                 <div className="relative px-8 bg-[--color-background] py-6 rounded-lg">
-                  <h2 className="font-bold text-2xl mb-1">{title}</h2>
+                  <h2 className="font-bold text-[--color-text] text-2xl mb-1">
+                    {title}
+                  </h2>
                   <p className="text-md text-white/80">{desc}</p>
                 </div>
               </section>
