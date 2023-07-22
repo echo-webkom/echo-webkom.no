@@ -1,13 +1,21 @@
-import { type Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
-module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/app/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+export default {
+	darkMode: ['class'],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		extend: {
+			colors: {
+				background: {
+					DEFAULT: 'var(--background)',
+					hover: 'var(--background-hover)'
+				},
+				foreground: 'var(--foreground)',
+				muted: 'var(--muted)',
+				accent: 'var(--accent)',
+				border: 'var(--border)'
+			}
+		}
+	},
+	plugins: []
 } satisfies Config;
