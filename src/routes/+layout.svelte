@@ -2,7 +2,13 @@
 	import '../app.css';
 
 	import { theme, toggleTheme } from '$lib/stores/theme';
+
+	$: themeColor = $theme === 'dark' ? '#111111' : '#f5f5f5';
 </script>
+
+<svelte:head>
+	<meta name="theme-color" content={themeColor} />
+</svelte:head>
 
 <div class="fixed top-0 right-0 m-4">
 	<button
