@@ -3,12 +3,6 @@
 	import ListItem from '$lib/components/ListItem.svelte';
 	import { links, newLinks } from '$lib/links';
 	import WebkomLogo from '$lib/assets/webkom-logo.png';
-
-	export const config = {
-		isr: {
-			expiration: false
-		}
-	} satisfies Config;
 </script>
 
 <main class="max-w-lg mx-auto min-h-screen py-14 sm:py-20 space-y-6 px-5">

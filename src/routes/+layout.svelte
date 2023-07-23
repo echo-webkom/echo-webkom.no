@@ -4,6 +4,8 @@
 	import { theme, toggleTheme } from '$lib/stores/theme';
 
 	$: themeColor = $theme === 'dark' ? '#111111' : '#f5f5f5';
+
+	export const prerender = true;
 </script>
 
 <svelte:head>
