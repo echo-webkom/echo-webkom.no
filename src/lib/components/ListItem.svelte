@@ -15,9 +15,7 @@
 			<slot name="desc" />
 		</p>
 
-		<p
-			class="flex flex-row items-center gap-1 group-hover:gap-2 text-accent transition-all duration-200"
-		>
+		<p class="flex flex-row items-center gap-1 group-hover:gap-2 text-accent duration-200">
 			<span>Besøk</span>
 			<span>&rarr;</span>
 		</p>

@@ -1,10 +1,17 @@
 <script lang="ts">
+	import type { Config } from '@sveltejs/adapter-vercel';
 	import ListItem from '$lib/components/ListItem.svelte';
 	import { links, newLinks } from '$lib/links';
 	import WebkomLogo from '$lib/assets/webkom-logo.png';
+
+	export const config = {
+		isr: {
+			expiration: false
+		}
+	} satisfies Config;
 </script>
 
-<main class="max-w-lg mx-auto min-h-screen py-20 space-y-6 px-4">
+<main class="max-w-lg mx-auto min-h-screen py-14 sm:py-20 space-y-6 px-5">
 	<div class="flex flex-row items-center gap-2">
 		<img src={WebkomLogo} alt="echo logo" class="w-14 h-auto" />
 		<h1 class="text-3xl font-bold">echo Webkom</h1>
@@ -15,9 +22,15 @@
 		<b> echo &ndash; Linjeforeningen for informatikk</b> ved Universitetet i Bergen.
 	</p>
 
-	<div>
-		<h2 id="links" class="text-xl font-semibold">Nyttige lenker</h2>
+	<a
+		href="https://verv.echo-webkom.no"
+		class="block p-4 text-white shadow-lg bg-blue-500 rounded-lg transition-transform duration-300 hover:scale-105"
+	>
+		<h3 class="text-lg font-semibold">Vi søker nye medlemmer!</h3>
+		<p>Vil du være med å lage nettsidene til echo? Søk på vervet som utvikler i echo Webkom!</p>
+	</a>
 
+	<div>
 		<ul class="flex flex-col">
 			{#each links as link}
 				<ListItem to={link.to}>
