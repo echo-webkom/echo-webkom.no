@@ -1,5 +1,4 @@
 {
-    "$schema": "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/web-manifest.json",
     "name": "echo Webkom",
     "short_name": "echo Webkom",
     "description": "Nettsiden til echo Webkom",
