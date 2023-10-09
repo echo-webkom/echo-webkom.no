@@ -5,8 +5,10 @@ import { links, newLinks } from "../lib/links";
 import ListItem from "../components/ListItem.astro";
 import { getImage } from "astro:assets";
 import background from "../assets/background.png";
+import grainy from "../assets/grainy.png";
 
 const backgroundImage = await getImage({ src: background });
+const grainyImage = await getImage({ src: grainy });
 ---
 
 <!doctype html>
@@ -15,9 +17,14 @@ const backgroundImage = await getImage({ src: background });
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body
-    style={`background-image: url('${backgroundImage.src}'); background-size: 1000px auto; background-repeat: no-repeat; background-position: center top; background-color: #151515`}
+    style={`background-image: url('${grainy.src}'); background-size: 1000px auto; background-repeat: repeat; background-position: center center; background-color: #151515`}
     class="text-gray-300"
   >
+    <div
+      style={`background-image: url('${background.src}'); background-size: cover; background-repeat: no-repeat; background-position: center center;`}
+      class="w-full h-screen fixed top-0 left-0 -z-20"
+    >
+    </div>
     <main class="max-w-lg mx-auto min-h-screen py-14 sm:py-20 space-y-6 px-5">
       <div class="flex flex-row items-center gap-2">
         <img src="/webkom-logo.png" alt="echo logo" class="w-14 h-auto" />
