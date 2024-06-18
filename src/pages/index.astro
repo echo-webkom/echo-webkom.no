@@ -3,9 +3,10 @@ import BaseHead from "../components/BaseHead.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { links, newLinks } from "../lib/links";
 import ListItem from "../components/ListItem.astro";
-import { getImage } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import background from "../assets/background.png";
 import grainy from "../assets/grainy.png";
+import WebkomLogo from "../assets/webkom-logo.png";
 
 const backgroundImage = await getImage({ src: background });
 const grainyImage = await getImage({ src: grainy });
@@ -27,7 +28,7 @@ const grainyImage = await getImage({ src: grainy });
     </div>
     <main class="max-w-lg mx-auto min-h-screen py-14 sm:py-20 space-y-6 px-5">
       <div class="flex flex-row items-center gap-2">
-        <img src="/webkom-logo.png" alt="echo logo" class="w-14 h-auto" />
+        <Image src={WebkomLogo} alt="echo logo" class="w-14 h-auto" />
         <h1 class="text-3xl font-bold">echo Webkom</h1>
       </div>
 
