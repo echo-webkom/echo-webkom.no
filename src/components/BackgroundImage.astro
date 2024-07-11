@@ -1,0 +1,17 @@
+---
+import background from "@/assets/background.png?url";
+---
+
+<div style={`background: url(${background})`}>
+  <slot />
+</div>
+
+<style>
+  div {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+  }
+</style>
