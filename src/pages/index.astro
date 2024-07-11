@@ -1,54 +1,21 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
-import { links } from "../lib/links";
-import ListItem from "../components/ListItem.astro";
 import { Image } from "astro:assets";
-import background from "../assets/background.png";
-import grainy from "../assets/grainy.png";
-import WebkomLogo from "../assets/webkom-logo.png";
+
+import webkom from "@/assets/webkom-logo.png";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="no">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body
-    style={`background-image: url('${grainy.src}'); background-size: 1000px auto; background-repeat: repeat; background-position: center center; background-color: #151515`}
-    class="text-gray-300"
-  >
-    <div
-      style={`background-image: url('${background.src}'); background-size: cover; background-repeat: no-repeat; background-position: center center;`}
-      class="w-full h-screen fixed top-0 left-0 -z-20"
-    >
+<BaseLayout>
+  <main class="max-w-lg bg-white mx-auto min-h-screen py-14 sm:py-20 space-y-10 px-5">
+    <div class="flex flex-col items-center gap-2">
+      <Image src={webkom} alt="Webkom logo" class="w-32 h-auto" loading="eager" format="png" />
+      <h1 class="text-4xl
+        font-semibold">echo Webkom</h1>
     </div>
-    <main class="max-w-lg mx-auto min-h-screen py-14 sm:py-20 space-y-6 px-5">
-      <div class="flex flex-row items-center gap-2">
-        <Image src={WebkomLogo} alt="echo logo" class="w-14 h-auto" />
-        <h1 class="text-3xl font-bold">echo Webkom</h1>
-      </div>
 
-      <p>
-        echo Webkom er utviklergruppen i Webkom. Vi jobber med å lage og
-        vedlikeholde nettsidene til
-        <b> echo &ndash; Linjeforeningen for informatikk</b> ved Universitetet i
-        Bergen.
-      </p>
-
-      <div>
-        <ul class="flex flex-col">
-          {
-            links.map((link) => (
-              <ListItem to={link.to}>
-                <Fragment slot="title">{link.title}</Fragment>
-
-                <Fragment slot="desc">{link.desc}</Fragment>
-              </ListItem>
-            ))
-          }
-        </ul>
-      </div>
-    </main>
-  </body>
-</html>
+    <p class="text-lg text-center">
+      echo Webkom er utviklergruppen i Webkom. Vi jobber med å lage og vedlikeholde nettsidene til
+      <b> echo &ndash; Linjeforeningen for informatikk</b> ved Universitetet i Bergen.
+    </p>
+  </main>
+</BaseLayout>

@@ -1,19 +1,16 @@
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
+import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import preact from "@astrojs/preact";
-import cloudflare from "@astrojs/cloudflare";
+import { defineConfig } from "astro/config";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://echo-webkom.no",
-  integrations: [mdx(), sitemap(), tailwind(), preact()],
+  integrations: [sitemap(), tailwind()],
   output: "server",
   adapter: cloudflare({
+    imageService: "passthrough",
     platformProxy: {
       enabled: true,
     },
-    imageService: "cloudflare",
   }),
 });

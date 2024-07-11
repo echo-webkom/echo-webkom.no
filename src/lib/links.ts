@@ -1,6 +1,6 @@
 export const links = [
   {
-    title: "echo",
+    title: "echo.uib.no",
     desc: "Nettsiden til echo – Linjeforeningen for informatikk ved UiB.",
     to: "https://echo.uib.no",
   },
