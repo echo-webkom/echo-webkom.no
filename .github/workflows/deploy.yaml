@@ -1,0 +1,29 @@
+name: Deploy 🚀
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install pnpm 📦
+        uses: pnpm/action-setup@v3
+
+      - name: Install dependencies 📥
+        run: pnpm install
+
+      - name: Build 🏗️
+        run: pnpm run build
+
+      - name: Deploy 🚀
+        run: pnpm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

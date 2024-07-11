@@ -15,16 +15,3 @@ export const links = [
     to: "https://www.instagram.com/echo_webkom/",
   },
 ];
-
-export const newLinks = [
-  {
-    title: "Sanity CMS",
-    desc: "CMS for den kommende nettsiden til echo. Fortsatt under utvikling.",
-    to: "https://cms.echo-webkom.no",
-  },
-  {
-    title: "Dokumentasjon",
-    desc: "Dokumentasjon for den kommende nettsiden til echo. Fortsatt under utvikling.",
-    to: "https://docs.echo-webkom.no",
-  },
-];

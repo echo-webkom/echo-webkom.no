@@ -1,15 +1,12 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import { links, newLinks } from "../lib/links";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
+import { links } from "../lib/links";
 import ListItem from "../components/ListItem.astro";
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import background from "../assets/background.png";
 import grainy from "../assets/grainy.png";
 import WebkomLogo from "../assets/webkom-logo.png";
-
-const backgroundImage = await getImage({ src: background });
-const grainyImage = await getImage({ src: grainy });
 ---
 
 <!doctype html>
@@ -43,24 +40,6 @@ const grainyImage = await getImage({ src: grainy });
         <ul class="flex flex-col">
           {
             links.map((link) => (
-              <ListItem to={link.to}>
-                <Fragment slot="title">{link.title}</Fragment>
-
-                <Fragment slot="desc">{link.desc}</Fragment>
-              </ListItem>
-            ))
-          }
-        </ul>
-      </div>
-
-      <div>
-        <h2 id="links-dev" class="text-2xl font-semibold">
-          Lenker for utviklere
-        </h2>
-
-        <ul class="flex flex-col">
-          {
-            newLinks.map((link) => (
               <ListItem to={link.to}>
                 <Fragment slot="title">{link.title}</Fragment>
 
