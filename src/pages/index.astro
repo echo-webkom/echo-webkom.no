@@ -6,16 +6,18 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <main class="max-w-lg mx-auto min-h-screen py-14 sm:py-20 space-y-10 px-5">
-    <div class="flex flex-col items-center gap-2">
-      <Image src={webkom} alt="Webkom logo" class="w-32 h-auto" loading="eager" format="png" />
-      <h1 class="text-4xl
-        font-semibold">echo Webkom</h1>
+<div class="flex min-h-screen items-center justify-center bg-[#0a0a0a] p-8 font-mono text-[#00ff00]">
+  <div class="w-full max-w-3xl">
+    <div class="mb-4 text-sm opacity-80 sm:text-base">
+      <span class="text-[#00ff00]">guest@webkom</span>:<span class="text-[#0099ff]">~</span>$ <span class="text-white">cat webkom.txt</span></div> <div class="mb-8"><pre class="mb-6 overflow-x-auto text-[0.5rem] leading-tight text-[#00ff00] opacity-90 sm:text-xs">
+ ██╗    ██╗███████╗██████╗ ██╗  ██╗ ██████╗ ███╗   ███╗
+ ██║    ██║██╔════╝██╔══██╗██║ ██╔╝██╔═══██╗████╗ ████║
+ ██║ █╗ ██║█████╗  ██████╔╝█████╔╝ ██║   ██║██╔████╔██║
+ ██║███╗██║██╔══╝  ██╔══██╗██╔═██╗ ██║   ██║██║╚██╔╝██║
+ ╚███╔███╔╝███████╗██████╔╝██║  ██╗╚██████╔╝██║ ╚═╝ ██║
+  ╚══╝╚══╝ ╚══════╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+      </pre>
     </div>
-
-    <p class="text-lg text-center">
-      echo Webkom er utviklergruppen i Webkom. Vi jobber med å lage og vedlikeholde nettsidene til
-      <b> echo &ndash; Linjeforeningen for informatikk</b> ved Universitetet i Bergen.
-    </p>
-  </main>
+  </div>
+</div>
 </BaseLayout>
